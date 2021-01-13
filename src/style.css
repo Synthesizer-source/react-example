@@ -1,8 +1,45 @@
-* {
+/* * {
   outline: 1px solid red;
-}
+} */
 
 h1,
 p {
   font-family: Lato;
+}
+
+.custom-card {
+  opacity: 1;
+}
+.custom-card:hover {
+  opacity: 1;
+}
+
+.custom-card div img {
+  width: 120px;
+}
+
+.brand-text-color {
+  color: #ef233c;
+}
+
+.bg-bar {
+  background-color: #5e6572;
+}
+
+.custom-card:hover div:hover img {
+  width: 135px;
+}
+.bg-instructors {
+  background-color: #33658a;
+}
+
+.bg-about {
+  background-color: #da6a41;
+  margin-right: 120px;
+}
+
+@media only screen and (max-width: 768px) {
+  .bg-about {
+    margin-right: 0px;
+  }
 }

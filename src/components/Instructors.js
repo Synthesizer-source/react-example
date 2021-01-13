@@ -26,11 +26,11 @@ const DATA = [
   {
     name: "Guido van Rossum",
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Guido_van_Rossum_at_Google_IO_2008.jpg/320px-Guido_van_Rossum_at_Google_IO_2008.jpg",
+      "https://alchetron.com/cdn/guido-van-rossum-c37d26d7-eae4-462f-838a-98a68fa1a20-resize-750.jpeg",
     context:
       " He has worked for various research institutes, including the Centrum Wiskunde & Informatica (CWI) in the Netherlands, the U.S. National Institute of Standards and Technology (NIST), and the Corporation for National Research Initiatives (CNRI). From 2000 until 2003 he worked for Zope corporation. In 2003 Van Rossum left Zope for Elemental Security. While there he worked on a custom programming language for the organization.[18] From 2005 to December 2012, he worked at Google, where he spent half of his time developing the Python language. In January 2013, he started working for Dropbox.[19] In October 2019, Van Rossum officially retired before coming out of the retirement the following year to join Microsoft.",
     style: {
-      height: "250px",
+      height: "300px",
       backgroundColor: "#b56576"
     }
   }
@@ -58,7 +58,7 @@ function Instructors() {
           {DATA.map(function(item, index) {
             if (index % 2 == 0) {
               return (
-                <div className="row ">
+                <div className="row">
                   <div
                     className="col-sm-12 col-md-2 p-2"
                     style={{ backgroundColor: item.style.backgroundColor }}

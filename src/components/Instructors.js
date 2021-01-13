@@ -20,7 +20,7 @@ const DATA = [
       "Gosling was with Sun Microsystems between 1984 and 2010 (26 years). At Sun he invented an early Unix windowing system called NeWS, which became a lesser-used alternative to the still used X Window, because Sun did not give it an open source license.",
     style: {
       height: "200px",
-      backgroundColor: "#c32f27"
+      backgroundColor: "#e76f51"
     }
   },
   {
@@ -31,7 +31,7 @@ const DATA = [
       " He has worked for various research institutes, including the Centrum Wiskunde & Informatica (CWI) in the Netherlands, the U.S. National Institute of Standards and Technology (NIST), and the Corporation for National Research Initiatives (CNRI). From 2000 until 2003 he worked for Zope corporation. In 2003 Van Rossum left Zope for Elemental Security. While there he worked on a custom programming language for the organization.[18] From 2005 to December 2012, he worked at Google, where he spent half of his time developing the Python language. In January 2013, he started working for Dropbox.[19] In October 2019, Van Rossum officially retired before coming out of the retirement the following year to join Microsoft.",
     style: {
       height: "250px",
-      backgroundColor: "#db7c26"
+      backgroundColor: "#b56576"
     }
   }
 ];
@@ -58,7 +58,7 @@ function Instructors() {
           {DATA.map(function(item, index) {
             if (index % 2 == 0) {
               return (
-                <div className="row my-2 ">
+                <div className="row ">
                   <div
                     className="col-sm-12 col-md-2 p-2"
                     style={{ backgroundColor: item.style.backgroundColor }}
@@ -82,7 +82,7 @@ function Instructors() {
               );
             } else {
               return (
-                <div className="row my-2">
+                <div className="row">
                   <div className="col-2" />
                   <div
                     className="col-sm-12 order-2 col-md-8 order-md-1 col-sm-pull text-light text-center p-2"

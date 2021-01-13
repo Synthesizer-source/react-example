@@ -41,7 +41,7 @@ const COLLABORATORS = [
 
 function Collaborators() {
   return (
-    <div id="partners" className="my-5">
+    <div id="collaborators" className="my-5">
       <h2 className="text-center text-white-50">COLLABORATORS</h2>
       <div className="container">
         <div className="bg-bar mb-5" style={{ width: "100%", height: "2px" }} />

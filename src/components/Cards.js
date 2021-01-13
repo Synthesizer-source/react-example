@@ -50,6 +50,7 @@ function CardsItems() {
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
         </div>
+        <div className="row " />
         <div class="row">
           {cardImages.map(function(item, index) {
             let bg = getRandomColor(arr);

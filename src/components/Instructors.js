@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import { Container, Row, Col, Image } from "react-bootstrap";
 const DATA = [
   {
     name: "Bjarne Stroustrup",
@@ -58,41 +58,49 @@ function Instructors() {
           {DATA.map(function(item, index) {
             if (index % 2 == 0) {
               return (
-                <div className="row">
-                  <div
-                    className="col-sm-12 col-md-2 p-2"
+                <Row>
+                  <Col
+                    sm={12}
+                    md={2}
+                    className="p-2"
                     style={{ backgroundColor: item.style.backgroundColor }}
                   >
-                    <img
+                    <Image
                       src={item.imgUrl}
                       className="img-fluid d-block m-auto"
                       style={{ height: item.style.height }}
                       alt="..."
                     />
-                  </div>
-                  <div
-                    className="col-sm-12 col-md-8 text-light text-center p-2"
+                  </Col>
+                  <Col
+                    sm={12}
+                    md={8}
+                    className="text-light text-center p-2"
                     style={{ backgroundColor: item.style.backgroundColor }}
                   >
                     <h4 className="mb-4">{item.name}</h4>
                     <p>{item.context}</p>
-                  </div>
-                  <div className="col-2" />
-                </div>
+                  </Col>
+                  <Col sm={2} />
+                </Row>
               );
             } else {
               return (
-                <div className="row">
-                  <div className="col-2" />
-                  <div
-                    className="col-sm-12 order-2 col-md-8 order-md-1 col-sm-pull text-light text-center p-2"
+                <Row>
+                  <Col sm={2} />
+                  <Col
+                    sm={12}
+                    md={8}
+                    className="order-2 order-md-1 col-sm-pull text-light text-center p-2"
                     style={{ backgroundColor: item.style.backgroundColor }}
                   >
                     <h4 className="mb-4">{item.name}</h4>
                     <p>{item.context}</p>
-                  </div>
-                  <div
-                    className="col-sm-12 order-1 col-md-2 order-md-2 p-2"
+                  </Col>
+                  <Col
+                    sm={12}
+                    md={2}
+                    className="order-1 order-md-2 p-2"
                     style={{ backgroundColor: item.style.backgroundColor }}
                   >
                     <img
@@ -101,8 +109,8 @@ function Instructors() {
                       style={{ height: item.style.height }}
                       alt="..."
                     />{" "}
-                  </div>
-                </div>
+                  </Col>
+                </Row>
               );
             }
           })}

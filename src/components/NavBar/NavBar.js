@@ -1,19 +1,7 @@
 import React, { Component } from "react";
 import { Navbar, Nav } from "react-bootstrap";
-const navItems = ["Home", "About", "Instructors", "Solutions", "Collaborators"];
+import NavBarItems from "./NavBarItems";
 
-function NavBarItems(index) {
-  return navItems.map(item => (
-    // <li class="nav-item active">
-    //   <a class="nav-link" href={"#" + item.toLowerCase()}>
-    //     {item}
-    //   </a>
-    // </li>
-    <Nav.Link className="text-light" href={"#" + item.toLowerCase()}>
-      {item}
-    </Nav.Link>
-  ));
-}
 
 function NavBar() {
   return (

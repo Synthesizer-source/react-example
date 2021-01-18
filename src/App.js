@@ -2,10 +2,10 @@ import React, { Component } from "react";
 
 import "./style.css";
 
-import NavBar from "./components/NavBar";
+import NavBar from "./components/NavBar/NavBar";
 import Header from "./components/Header";
-import Cards from "./components/Cards";
-import About from "./components/About";
+import Cards from "./components/Cards/Cards";
+import About from "./components/About/About";
 import Instructors from "./components/Instructors";
 import Solutions from "./components/Solutions";
 import Collaborators from "./components/Collaborators";

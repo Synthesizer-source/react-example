@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-
+import { Container, Row, Col, Image } from "react-bootstrap";
+import Collaborator from "./Collaborator";
 const COLLABORATORS = [
   {
     name: "Microsoft",
@@ -45,20 +46,11 @@ function Collaborators() {
       <h2 className="text-center text-white-50">COLLABORATORS</h2>
       <div className="container">
         <div className="bg-bar mb-5" style={{ width: "100%", height: "2px" }} />
-        <div className="row">
+        <Row>
           {COLLABORATORS.map(function(item, index) {
-            return (
-              <div className="col-sm-2 col-md-2 mx-auto mt-5">
-                <a href={item.url}>
-                  <img
-                    src={item.imgUrl}
-                    className="d-block img-fluid w-50 m-auto"
-                  />
-                </a>
-              </div>
-            );
+            return <Collaborator key={index} item={item} />;
           })}
-        </div>
+        </Row>
       </div>
     </div>
   );

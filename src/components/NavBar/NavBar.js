@@ -2,10 +2,9 @@ import React, { Component } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import NavBarItems from "./NavBarItems";
 
-
 function NavBar() {
   return (
-    <Navbar bg="dark" expand="lg">
+    <Navbar bg="dark" fixed="top" expand="lg">
       <Navbar.Brand className="offset-1" href="#home">
         <span className="brand-text-color">DeveloperX</span>
       </Navbar.Brand>

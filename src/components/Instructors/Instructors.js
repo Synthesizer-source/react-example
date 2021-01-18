@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
+import LInstructor from "./Instructor/LInstructor";
+import RInstructor from "./Instructor/RInstructor";
 const DATA = [
   {
     name: "Bjarne Stroustrup",
@@ -57,61 +59,9 @@ function Instructors() {
 
           {DATA.map(function(item, index) {
             if (index % 2 == 0) {
-              return (
-                <Row>
-                  <Col
-                    sm={12}
-                    md={2}
-                    className="p-2"
-                    style={{ backgroundColor: item.style.backgroundColor }}
-                  >
-                    <Image
-                      src={item.imgUrl}
-                      className="img-fluid d-block m-auto"
-                      style={{ height: item.style.height }}
-                      alt="..."
-                    />
-                  </Col>
-                  <Col
-                    sm={12}
-                    md={8}
-                    className="text-light text-center p-2"
-                    style={{ backgroundColor: item.style.backgroundColor }}
-                  >
-                    <h4 className="mb-4">{item.name}</h4>
-                    <p>{item.context}</p>
-                  </Col>
-                  <Col sm={2} />
-                </Row>
-              );
+              return <LInstructor item={item} />;
             } else {
-              return (
-                <Row>
-                  <Col sm={2} />
-                  <Col
-                    sm={12}
-                    md={8}
-                    className="order-2 order-md-1 col-sm-pull text-light text-center p-2"
-                    style={{ backgroundColor: item.style.backgroundColor }}
-                  >
-                    <h4 className="mb-4">{item.name}</h4>
-                    <p>{item.context}</p>
-                  </Col>
-                  <Col
-                    sm={12}
-                    md={2}
-                    className="order-1 order-md-2 p-2"
-                    style={{ backgroundColor: item.style.backgroundColor }}
-                  >
-                    <img
-                      src={item.imgUrl}
-                      className="img-fluid d-block m-auto"
-                      style={{ height: item.style.height }}
-                      alt="..."
-                    />{" "}
-                  </Col>
-                </Row>
-              );
+              return <RInstructor item={item} />;
             }
           })}
         </div>

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-
+import { Container, Row, Col, Image, Card } from "react-bootstrap";
+import Solution from "./Solution/Solution";
 const SOLUTIONS = [
   { name: "BASIC", color: "#f15152", price: "29.99 $" },
   { name: "PREMIUM", color: "#4b8f8c", price: "59.99 $" },
@@ -12,8 +13,8 @@ function Solutions() {
       <h2 className="text-center text-white-50">SOLUTIONS</h2>
       <div className="bg-bar mb-5" style={{ width: "100%", height: "2px" }} />
 
-      <div className="container">
-        <div className="row text-center text-light mb-5">
+      <Container>
+        <Row className="text-center text-light mb-5">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -23,45 +24,22 @@ function Solutions() {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
-        </div>
-        <div className="row">
+        </Row>
+        <Row>
           {SOLUTIONS.map(function(item, index) {
             return (
-              <div
-                className="col-sm-12 col-md-4 text-center"
+              <Col
+                sm={12}
+                md={4}
+                className="text-center"
                 style={{ backgroundColor: item.color, height: "100%" }}
               >
-                <div className="solution-card">
-                  <div class="card-body bg-transparent text-center">
-                    <h4 class="card-title">{item.name}</h4>
-
-                    <p class="card-text">
-                      <span>
-                        With supporting text below as a natural lead-in to
-                        additional content. With supporting text below as a
-                        natural lead-in to additional content. With supporting
-                        text below as a natural lead-in to additional content.
-                      </span>
-                    </p>
-                    <div>
-                      <p style={{ fontSize: "30px", fontWeight: "600" }}>
-                        {item.price}
-                      </p>
-                    </div>
-                    <a
-                      href="#"
-                      class="card-link text-light"
-                      style={{ fontSize: "20px" }}
-                    >
-                      View Details
-                    </a>
-                  </div>
-                </div>
-              </div>
+                <Solution item={item} />
+              </Col>
             );
           })}
-        </div>
-      </div>
+        </Row>
+      </Container>
     </div>
   );
 

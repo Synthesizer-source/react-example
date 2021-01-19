@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./style.css";
 
+import Contact from "./Contact";
 import NavBar from "./components/NavBar/NavBar";
 import Header from "./components/Header";
 import Cards from "./components/Cards/Cards";
@@ -12,6 +13,21 @@ import Collaborators from "./components/Collaborators/Collaborators";
 import Footer from "./components/Footer";
 
 export default function App() {
+  return (
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/contact">
+          <ContactPage />
+        </Route>
+      </Switch>
+    </Router>
+  );
+}
+
+function Home() {
   return (
     <div className="bg-dark">
       <NavBar />
@@ -24,4 +40,8 @@ export default function App() {
       <Footer />
     </div>
   );
+}
+
+function ContactPage() {
+  return <Contact />;
 }

@@ -5,7 +5,10 @@ function NavBarItem(props) {
   const isContact = props.item == "Contact" ? true : false;
 
   return (
-    <Nav.Link className="text-light" href={"/contact"}>
+    <Nav.Link
+      className="text-light"
+      href={isContact == true ? "/contact" : "#" + props.item.toLowerCase()}
+    >
       {props.item}
     </Nav.Link>
   );

@@ -4,29 +4,11 @@ import { Form, Button, Row, Col, Accordion, Card } from "react-bootstrap";
 function ListItem(props) {
   return (
     <Accordion>
-      <Card key={props.index}>
-        <Card.Header>
-          <span>{props.item.date + " " + "ID : " + props.item.name}</span>
-          <Accordion.Toggle
-            className="text-black offset-5"
-            as={Button}
-            variant="link"
-            eventKey="0"
-          >
-            Show Details
-          </Accordion.Toggle>
-          <Button
-            variant="danger"
-            className="offset-1"
-            value={props.item.id}
-            onClick={props.remove}
-          >
-            Delete
-          </Button>
-        </Card.Header>
+      <Card>
+        <CardHeader item={props.item} remove={props.remove} />
         <Accordion.Collapse eventKey="0">
           <Card.Body>
-            <EditContainer item={props.item} update={props.update} />
+            <CardBody item={props.item} update={props.update} />
           </Card.Body>
         </Accordion.Collapse>
       </Card>
@@ -34,9 +16,33 @@ function ListItem(props) {
   );
 }
 
-function EditContainer(props) {
-  console.log(props.item);
-  let js = "";
+function CardHeader(props) {
+  return (
+    <Card.Header>
+      <span>{props.item.date}</span>
+      <span className="offset-1">
+        <b>{"ID : " + props.item.id}</b>
+      </span>
+      <Accordion.Toggle
+        className="text-black offset-4"
+        as={Button}
+        variant="link"
+        eventKey="0"
+      >
+        Show Details
+      </Accordion.Toggle>
+      <Button
+        variant="danger"
+        className="offset-1"
+        onClick={() => props.remove(props.item)}
+      >
+        Delete
+      </Button>
+    </Card.Header>
+  );
+}
+
+function CardBody(props) {
   const nameInput = useRef();
   const lastNameInput = useRef();
   const eMailInput = useRef();
@@ -44,6 +50,7 @@ function EditContainer(props) {
   const [disable, setDisable] = useState(true);
   const [editButtonText, setEditButtonText] = useState("Edit");
 
+  let js = "";
   function save() {
     const name = nameInput.current.value;
     const lastName = lastNameInput.current.value;
@@ -128,6 +135,7 @@ function EditContainer(props) {
         <Form.Group className="mt-3 d-flex justify-content-between">
           <Button
             variant="primary"
+            disabled={disable}
             onClick={() => {
               save();
               props.update(js);

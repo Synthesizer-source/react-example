@@ -31,26 +31,30 @@ export default function Contact() {
     }
   }
 
+  const listArr = arr.map(function(item, index) {
+    return (
+      <ListItem
+        key={item.id}
+        item={item}
+        index={index}
+        remove={remove}
+        update={handleUpdate}
+      />
+    );
+  });
+
   function remove(event) {
     const itemID = event.target.value;
-    console.log(itemID);
-    if (itemID > -1) {
-      setArr([
-        ...arr.filter(function(item) {
-          return item.id != itemID;
-        })
-      ]);
-    }
-  }
-
-  function edit(event) {
     console.log(arr);
+
+    const arrX = arr.filter(item => item.id != itemID).slice();
+    console.log(arrX);
+    setArr(arrX);
   }
 
   function handleUpdate(param) {
     const updatedItem = JSON.parse(param);
-    let arrX = arr.slice();
-    arrX.map(function(item, index) {
+    arr.map(function(item) {
       if (item.id === updatedItem.id) {
         item.name = updatedItem.name;
         item.lastName = updatedItem.lastName;
@@ -59,9 +63,7 @@ export default function Contact() {
       }
     });
 
-    setArr([...arrX]);
-
-    console.log(arr);
+    setArr(arr);
   }
 
   return (
@@ -98,20 +100,7 @@ export default function Contact() {
         </Button>
       </Form>
       <Row>
-        <Col>
-          {arr.map(function(item, index) {
-            return (
-              <ListItem
-                key={index}
-                item={item}
-                index={index}
-                remove={remove}
-                edit={edit}
-                update={handleUpdate}
-              />
-            );
-          })}
-        </Col>
+        <Col>{listArr}</Col>
       </Row>
     </div>
   );

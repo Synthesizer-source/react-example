@@ -2,12 +2,6 @@ import React, { useState, useRef } from "react";
 import { Form, Button, Row, Col, Accordion, Card } from "react-bootstrap";
 
 function ListItem(props) {
-  const cardBody = useRef();
-
-  function edit(event) {
-    console.log(event.target.value);
-  }
-
   return (
     <Accordion>
       <Card key={props.index}>
@@ -23,17 +17,10 @@ function ListItem(props) {
           >
             Delete
           </Button>
-          <Button variant="danger" onClick={edit}>
-            Edit
-          </Button>
         </Card.Header>
         <Accordion.Collapse eventKey="0">
-          <Card.Body ref={cardBody}>
-            <EditContainer
-              item={props.item}
-              save={props.edit}
-              update={props.update}
-            />
+          <Card.Body>
+            <EditContainer item={props.item} update={props.update} />
           </Card.Body>
         </Accordion.Collapse>
       </Card>
@@ -41,23 +28,22 @@ function ListItem(props) {
   );
 }
 
-function BasicContainer(props) {
-  return <>{props.textArea}</>;
-}
-
 function EditContainer(props) {
-  let item = props.item;
+  console.log(props.item);
   let js = "";
   const nameInput = useRef();
   const lastNameInput = useRef();
   const eMailInput = useRef();
   const textAreaInput = useRef();
+  const [disable, setDisable] = useState(true);
+  const [editButtonText, setEditButtonText] = useState("Edit");
 
-  function Save() {
+  function save() {
     const name = nameInput.current.value;
     const lastName = lastNameInput.current.value;
     const eMail = eMailInput.current.value;
     const textArea = textAreaInput.current.value;
+
     js = JSON.stringify({
       id: props.item.id,
       name: name,
@@ -66,6 +52,25 @@ function EditContainer(props) {
       textArea: textArea,
       date: props.item.date
     });
+
+    setEditButtonText("Edit");
+    setDisable(true);
+  }
+
+  function edit(event) {
+    let isDisable = disable;
+
+    if (!isDisable) {
+      setEditButtonText("Edit");
+      nameInput.current.value = props.item.name;
+      lastNameInput.current.value = props.item.lastName;
+      eMailInput.current.value = props.item.eMail;
+      textAreaInput.current.value = props.item.textArea;
+    } else {
+      setEditButtonText("Cancel");
+    }
+
+    setDisable(!isDisable);
   }
 
   return (
@@ -76,15 +81,17 @@ function EditContainer(props) {
             <Col>
               <Form.Control
                 ref={nameInput}
-                defaultValue={item.name}
+                defaultValue={props.item.name}
                 placeholder="First name"
+                disabled={disable}
               />
             </Col>
             <Col>
               <Form.Control
                 ref={lastNameInput}
-                defaultValue={item.lastName}
+                defaultValue={props.item.lastName}
                 placeholder="Last name"
+                disabled={disable}
               />
             </Col>
           </Row>
@@ -93,9 +100,10 @@ function EditContainer(props) {
           <Form.Label>Email address</Form.Label>
           <Form.Control
             ref={eMailInput}
-            defaultValue={item.eMail}
+            defaultValue={props.item.eMail}
             type="email"
             placeholder="Enter email"
+            disabled={disable}
           />
           <Form.Text className="text-muted">
             We'll never share your email with anyone else.
@@ -105,23 +113,23 @@ function EditContainer(props) {
           <Form.Label>Example textarea</Form.Label>
           <Form.Control
             ref={textAreaInput}
-            defaultValue={item.textArea}
+            defaultValue={props.item.textArea}
             as="textarea"
             rows={3}
-            readOnly={true}
+            disabled={disable}
           />
         </Form.Group>
         <Button
           variant="primary"
           onClick={() => {
-            Save();
+            save();
             props.update(js);
           }}
         >
           Save
         </Button>
-        <Button variant="primary" onClick={Save}>
-          Temp
+        <Button variant="primary" onClick={edit}>
+          {editButtonText}
         </Button>
       </Form>
     </>

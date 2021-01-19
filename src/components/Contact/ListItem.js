@@ -7,11 +7,17 @@ function ListItem(props) {
       <Card key={props.index}>
         <Card.Header>
           <span>{props.item.date + " " + "ID : " + props.item.name}</span>
-          <Accordion.Toggle as={Button} variant="link" eventKey="0">
-            Click me!
+          <Accordion.Toggle
+            className="text-black offset-5"
+            as={Button}
+            variant="link"
+            eventKey="0"
+          >
+            Show Details
           </Accordion.Toggle>
           <Button
-            variant="warning"
+            variant="danger"
+            className="offset-1"
             value={props.item.id}
             onClick={props.remove}
           >
@@ -119,18 +125,20 @@ function EditContainer(props) {
             disabled={disable}
           />
         </Form.Group>
-        <Button
-          variant="primary"
-          onClick={() => {
-            save();
-            props.update(js);
-          }}
-        >
-          Save
-        </Button>
-        <Button variant="primary" onClick={edit}>
-          {editButtonText}
-        </Button>
+        <Form.Group className="mt-3 d-flex justify-content-between">
+          <Button
+            variant="primary"
+            onClick={() => {
+              save();
+              props.update(js);
+            }}
+          >
+            Save
+          </Button>
+          <Button variant="warning" onClick={edit}>
+            {editButtonText}
+          </Button>
+        </Form.Group>
       </Form>
     </>
   );

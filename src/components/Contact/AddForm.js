@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
-import { Form, Button, Row, Col, Container, Card } from "react-bootstrap";
-import ListItem from "./ListItem";
+import { Form, Button, Row, Col, Container } from "react-bootstrap";
 
 function AddForm(props) {
   const nameInput = useRef();
@@ -15,6 +14,12 @@ function AddForm(props) {
     const lastName = lastNameInput.current.value;
     const eMail = eMailInput.current.value;
     const textArea = textAreaInput.current.value;
+
+    nameInput.current.value = "";
+    lastNameInput.current.value = "";
+    eMailInput.current.value = "";
+    textAreaInput.current.value = "";
+
     if (name && lastName && eMail && textArea) {
       setID(id + 1);
       return {

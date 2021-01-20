@@ -92,6 +92,7 @@ function CardBody(props) {
         <Form.Group controlID="fromNameSurname">
           <Row>
             <Col>
+              <Form.Label>Name</Form.Label>
               <Form.Control
                 ref={nameInput}
                 defaultValue={props.item.name}
@@ -100,6 +101,7 @@ function CardBody(props) {
               />
             </Col>
             <Col>
+              <Form.Label>Lastname</Form.Label>
               <Form.Control
                 ref={lastNameInput}
                 defaultValue={props.item.lastName}
@@ -123,7 +125,7 @@ function CardBody(props) {
           </Form.Text>
         </Form.Group>
         <Form.Group controlId="exampleForm.ControlTextarea1">
-          <Form.Label>Example textarea</Form.Label>
+          <Form.Label>Message</Form.Label>
           <Form.Control
             ref={textAreaInput}
             defaultValue={props.item.textArea}

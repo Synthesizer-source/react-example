@@ -1,10 +1,11 @@
 import React, { useState, useRef } from "react";
-import { Form, Button, Row, Col, Accordion, Card } from "react-bootstrap";
+import { Image } from "react-bootstrap";
 import NavBar from "./components/NavBar/NavBar";
-import ListItem from "./components/Contact/ListItem";
 import ListItems from "./components/Contact/ListItems";
 import AddForm from "./components/Contact/AddForm";
-import Footer from "./components/Footer";
+
+const imageSrc =
+  "https://qph.fs.quoracdn.net/main-qimg-1b48232f7e46615dcaabb24cf1e7093b";
 
 export default function Contact() {
   const [arrContacts, setArrContacts] = useState([]);
@@ -62,12 +63,14 @@ export default function Contact() {
   return (
     <div className="bg-dark" style={{ height: "100vh", minHeight: "100vh" }}>
       <NavBar />
+      <Image className="d-block w-100 img-contact" src={imageSrc} />
       <AddForm addContact={handleAddContact} />
       <ListItems
         contacts={arrContacts}
         remove={handleRemove}
         update={handleUpdate}
       />
+      <div className="bg-dark w-100" style={{ height: "10rem" }} />
     </div>
   );
 }

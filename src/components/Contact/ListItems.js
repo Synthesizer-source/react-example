@@ -5,20 +5,18 @@ import ListItem from "./ListItem";
 function ListItems(props) {
   const listArr = props.contacts.map(function(item) {
     return (
-      <div className="bg-dark">
-        <Container>
-          <ListItem
-            key={item.id}
-            item={item}
-            remove={props.remove}
-            update={props.update}
-          />
-        </Container>
+      <div>
+        <ListItem
+          key={item.id}
+          item={item}
+          remove={props.remove}
+          update={props.update}
+        />
       </div>
     );
   });
 
-  return <ListGroup>{listArr}</ListGroup>;
+  return <ListGroup className="py-5">{listArr}</ListGroup>;
 }
 
 export default ListItems;

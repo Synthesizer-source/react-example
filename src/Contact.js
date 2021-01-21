@@ -1,8 +1,10 @@
 import React, { useState, useRef } from "react";
-import { Image } from "react-bootstrap";
+import { Image, Container } from "react-bootstrap";
 import NavBar from "./components/NavBar/NavBar";
 import ListItems from "./components/Contact/ListItems";
 import AddForm from "./components/Contact/AddForm";
+
+import Footer from "./components/Footer";
 
 const imageSrc =
   "https://qph.fs.quoracdn.net/main-qimg-1b48232f7e46615dcaabb24cf1e7093b";
@@ -13,28 +15,6 @@ export default function Contact() {
   function handleAddContact(contact) {
     setArrContacts([...arrContacts, contact]);
   }
-
-  // const listArr = arrContacts.map(function(item, index) {
-  //   // return (
-  //   //   <ListItem
-  //   //     key={item.id}
-  //   //     item={item}
-  //   //     index={index}
-  //   //     remove={remove}
-  //   //     update={handleUpdate}
-  //   //   />
-  //   // );
-
-  //   return (
-  //     <ListItem
-  //       key={item.id}
-  //       item={item}
-  //       index={index}
-  //       remove={remove}
-  //       update={handleUpdate}
-  //     />
-  //   );
-  // });
 
   function handleUpdate(param) {
     const updatedItem = JSON.parse(param);
@@ -65,12 +45,15 @@ export default function Contact() {
       <NavBar />
       <Image className="d-block w-100 img-contact" src={imageSrc} />
       <AddForm addContact={handleAddContact} />
-      <ListItems
-        contacts={arrContacts}
-        remove={handleRemove}
-        update={handleUpdate}
-      />
-      <div className="bg-dark w-100" style={{ height: "10rem" }} />
+      <div className="bg-dark">
+        <Container>
+          <ListItems
+            contacts={arrContacts}
+            remove={handleRemove}
+            update={handleUpdate}
+          />
+        </Container>
+      </div>
     </div>
   );
 }

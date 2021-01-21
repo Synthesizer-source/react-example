@@ -5,10 +5,10 @@ function ListItem(props) {
   return (
     <Accordion>
       <Card>
-        <CardHeader item={props.item} remove={props.remove} />
+        <ListItemHeader item={props.item} remove={props.remove} />
         <Accordion.Collapse eventKey="0">
           <Card.Body>
-            <CardBody item={props.item} update={props.update} />
+            <ListItemBody item={props.item} update={props.update} />
           </Card.Body>
         </Accordion.Collapse>
       </Card>
@@ -16,7 +16,7 @@ function ListItem(props) {
   );
 }
 
-function CardHeader(props) {
+function ListItemHeader(props) {
   return (
     <Card.Header>
       <span>{props.item.date}</span>
@@ -42,7 +42,7 @@ function CardHeader(props) {
   );
 }
 
-function CardBody(props) {
+function ListItemBody(props) {
   const nameInput = useRef();
   const lastNameInput = useRef();
   const eMailInput = useRef();

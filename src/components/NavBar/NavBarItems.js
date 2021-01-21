@@ -11,7 +11,7 @@ const navItems = [
 ];
 
 function NavBarItems() {
-  return navItems.map(item => <NavBarItem item={item} />);
+  return navItems.map((item, index) => <NavBarItem key={index} item={item} />);
 }
 
 export default NavBarItems;

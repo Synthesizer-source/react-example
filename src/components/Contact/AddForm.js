@@ -37,7 +37,7 @@ function AddForm(props) {
     <div className="bg-dark text-muted py-5">
       <Container>
         <Form className="pt-5">
-          <Form.Group controlID="fromNameSurname">
+          <Form.Group controlid="fromNameSurname">
             <Row>
               <Col>
                 <Form.Label>Name</Form.Label>

@@ -7,7 +7,8 @@ const navItems = [
   "Instructors",
   "Solutions",
   "Collaborators",
-  "Contact"
+  "Contact",
+  "Courses"
 ];
 
 function NavBarItems() {

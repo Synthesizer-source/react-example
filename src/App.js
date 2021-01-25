@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./style.css";
 
 import Contact from "./Contact";
+import Courses from "./Courses";
+import Search from "./Search";
 import NavBar from "./components/NavBar/NavBar";
 import Header from "./components/Header";
 import Cards from "./components/Cards/Cards";
@@ -21,6 +23,12 @@ export default function App() {
         </Route>
         <Route path="/contact">
           <ContactPage />
+        </Route>
+        <Route exact path="/courses">
+          <Courses />
+        </Route>
+        <Route exact path="/courses/search">
+          <Search />
         </Route>
       </Switch>
     </Router>

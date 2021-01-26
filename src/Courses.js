@@ -6,15 +6,17 @@ import Course from "./components/Course/Course";
 import courses from "./data/courses.json";
 
 function Courses() {
-  const listCourses = courses.courses.map((item, index) => (
-    <Col sm={6}>
-      <Course key={index} item={item} />
-    </Col>
-  ));
+  const listCourses = courses.courses
+    .filter(item => item.isActive)
+    .map((item, index) => (
+      <Col sm={4} className="mb-3">
+        <Course key={index} item={item} />
+      </Col>
+    ));
   return (
     <div>
       <SearchBar />
-      <Container sm={{ offset: 12 }}>
+      <Container className="w-75">
         <Row>{listCourses}</Row>
       </Container>
     </div>

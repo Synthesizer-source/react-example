@@ -1,0 +1,11 @@
+{
+  "courses":[
+    {"id" : 0, "title" : "C", "detail" : "Embedded Systems", "isActive" : true},
+    {"id" : 1, "title" : "C++", "detail" : "Image Processing", "isActive" : true},
+    {"id" : 2, "title" : "Java", "detail" : "Object Oriented Programing", "isActive" : true},
+    {"id" : 3, "title" : "JavaScript", "detail" : "Web Programming", "isActive" : true},
+    {"id" : 4, "title" : "Python", "detail" : "Deep Learning", "isActive" : true}
+  ]
+
+  
+}

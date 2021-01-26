@@ -1,6 +1,6 @@
-/* * {
+* {
   outline: 1px solid red;
-} */
+}
 
 h1,
 p {
@@ -43,7 +43,6 @@ p {
     margin-right: 0px;
   }
 }
-
 
 @media only screen and (max-width: 768px) {
   .img-contact {

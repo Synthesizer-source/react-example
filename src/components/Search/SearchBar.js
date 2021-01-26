@@ -1,18 +1,22 @@
-import React, { Component } from "react";
+import React, { useRef } from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link,
   useParams,
-  useRouteMatch
+  useRouteMatch,
+  useHistory
 } from "react-router-dom";
 import { Form, Container, Row, Col, Button } from "react-bootstrap";
 import Search from "../../Search";
 
 function SearchBar() {
   let { path, url } = useRouteMatch();
+  const inputValue = useRef();
+  const history = useHistory();
   function handleSubmit() {
+    history.push(`courses/search?q=${inputValue.current.value}`);
     // <Switch>
     //   <Route exact path={path}>
     //     <Search />
@@ -22,19 +26,31 @@ function SearchBar() {
 
   return (
     <>
-      <Form sm={{ offset: 5 }}>
-        <Form.Group controlid="fromNameSurname">
-          <Row>
-            <Col sm={(6, { span: 3, offset: 3 })}>
-              <Form.Label>Search</Form.Label>
-              <Form.Control placeholder="What do you want it ?" />
-            </Col>
-          </Row>
-          <Link to={`${url}/search`}>
-            <Button variant="primary" className="mt-3" onClick={handleSubmit}>
-              Submit
-            </Button>
-          </Link>
+      <Form
+        onSubmit={handleSubmit}
+        className="mb-4 align-self-center mr-3"
+        bg={"dark"}
+      >
+        <Form.Group controlid="fromNameSurname" className="mb-4">
+          <Container fluid>
+            <Row>
+              <Col className="m-auto text-center" sm={4}>
+                <Form.Label>Search</Form.Label>
+                <Form.Control
+                  name="q"
+                  ref={inputValue}
+                  placeholder="What do you want it ?"
+                />
+                <Button
+                  variant="primary"
+                  className=" my-3 w-100"
+                  onClick={handleSubmit}
+                >
+                  Submit
+                </Button>
+              </Col>
+            </Row>
+          </Container>
         </Form.Group>
       </Form>
     </>

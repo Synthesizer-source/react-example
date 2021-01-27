@@ -5,7 +5,7 @@ import {
   Route,
   useParams
 } from "react-router-dom";
-import { Form, Container, Row, Col, Image } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import Course from "../Course/Course";
 import courses from "../../data/courses.json";
 

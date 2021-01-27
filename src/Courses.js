@@ -8,9 +8,9 @@ import courses from "./data/courses.json";
 function Courses() {
   const listCourses = courses.courses
     .filter(item => item.isActive)
-    .map((item, index) => (
+    .map(item => (
       <Col sm={4} className="mb-3">
-        <Course key={index} item={item} />
+        <Course key={item.id} item={item} />
       </Col>
     ));
   return (

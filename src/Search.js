@@ -8,6 +8,7 @@ import {
   useHistory
 } from "react-router-dom";
 import courses from "./data/courses.json";
+import Course from "./components/Course/Course";
 import { Image, Container, Row, Col } from "react-bootstrap";
 
 function Search() {
@@ -22,9 +23,9 @@ function Search() {
       const productResults = courses.courses
         .filter(item => item.title.toLowerCase().includes(q.toLowerCase()))
         .map(item => (
-          <li key={item.id} class="list-group-item">
-            <Link to={`/courses/${item.id}`}>{item.title}</Link>
-          </li>
+          <Col sm={4} className="mb-3">
+            <Course key={item.id} item={item} />
+          </Col>
         ));
 
       setSearchResult(productResults);

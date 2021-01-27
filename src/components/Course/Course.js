@@ -4,11 +4,11 @@ import { BrowserRouter as Router, Link } from "react-router-dom";
 
 function Course(props) {
   const item = props.item;
-  console.log(item);
+
   return (
     <Card className="rounded-0 mx-auto">
       <Card.Img
-        src={`https://picsum.photos/id/666/400/300`}
+        src={`https://picsum.photos/id/${item.id}/400/300`}
         className="card-img-top rounded-0"
         alt="..."
       />

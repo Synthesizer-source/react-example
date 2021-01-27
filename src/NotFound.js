@@ -45,7 +45,7 @@ function NotFound() {
           </Col>
         </Row>
         <Row className="mt-4">
-          <Link className="btn btn-primary w-100" to={`/`}>
+          <Link className="btn btn-secondary w-100" to={`/`}>
             Go to Home
           </Link>
         </Row>

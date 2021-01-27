@@ -8,8 +8,18 @@ import {
   useRouteMatch,
   useHistory
 } from "react-router-dom";
-import { Form, Container, Row, Col, Button } from "react-bootstrap";
+import {
+  Form,
+  Container,
+  Row,
+  Col,
+  Button,
+  Dropdown,
+  InputGroup
+} from "react-bootstrap";
 import Search from "../../Search";
+
+const DD_OPTIONS = ["Option 1", "Option 2", "Option 3"];
 
 function SearchBar() {
   let { path, url } = useRouteMatch();
@@ -18,6 +28,10 @@ function SearchBar() {
   function handleSubmit() {
     history.push(`/courses/search?q=${inputValue.current.value}`);
   }
+
+  const dropdownOptions = DD_OPTIONS.map(item => (
+    <Dropdown.Item>{item}</Dropdown.Item>
+  ));
 
   return (
     <div>
@@ -29,7 +43,16 @@ function SearchBar() {
         <Form.Group controlid="fromNameSurname">
           <Container fluid>
             <Row>
-              <Col className="m-auto text-center" sm={4}>
+              <Col sm={4}>
+                <Dropdown className="text-center my-3 ml-md-5 w-100">
+                  <Dropdown.Toggle variant="success" id="dropdown-basic">
+                    Dropdown Button
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu>{dropdownOptions}</Dropdown.Menu>
+                </Dropdown>
+              </Col>
+              <Col className=" text-center" sm={4}>
                 <Form.Control
                   name="q"
                   ref={inputValue}

@@ -6,7 +6,7 @@ function NavBar() {
   return (
     <Navbar bg="dark" fixed="top" expand="lg">
       <Navbar.Brand className="offset-1" href="#home">
-        <span className="brand-text-color">DeveloperX</span>
+        <span className="brand-color">DeveloperX</span>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">

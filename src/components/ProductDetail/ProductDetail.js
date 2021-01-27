@@ -12,6 +12,7 @@ import courses from "../../data/courses.json";
 function ProductDetail() {
   const { id } = useParams();
   const course = courses.courses.filter(item => item.id == id);
+  console.log(course);
   return (
     <Container>
       <Course key={course.id} item={course[0]} />

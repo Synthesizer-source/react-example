@@ -20,6 +20,7 @@ function Search() {
 
   useEffect(() => {
     if (q) {
+      console.log(q);
       const productResults = courses.courses
         .filter(item => item.title.toLowerCase().includes(q.toLowerCase()))
         .map(item => (

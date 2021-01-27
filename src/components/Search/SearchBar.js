@@ -16,44 +16,38 @@ function SearchBar() {
   const inputValue = useRef();
   const history = useHistory();
   function handleSubmit() {
-    history.push(`courses/search?q=${inputValue.current.value}`);
-    // <Switch>
-    //   <Route exact path={path}>
-    //     <Search />
-    //   </Route>
-    // </Switch>;
+    history.push(`/courses/search?q=${inputValue.current.value}`);
   }
 
   return (
-    <>
+    <div>
       <Form
         onSubmit={handleSubmit}
-        className="mb-4 align-self-center mr-3"
+        className="my-5 align-self-center mr-3"
         bg={"dark"}
       >
-        <Form.Group controlid="fromNameSurname" className="mb-4">
+        <Form.Group controlid="fromNameSurname">
           <Container fluid>
             <Row>
               <Col className="m-auto text-center" sm={4}>
-                <Form.Label>Search</Form.Label>
                 <Form.Control
                   name="q"
                   ref={inputValue}
                   placeholder="What do you want it ?"
                 />
                 <Button
-                  variant="primary"
+                  variant="secondary"
                   className=" my-3 w-100"
                   onClick={handleSubmit}
                 >
-                  Submit
+                  Search
                 </Button>
               </Col>
             </Row>
           </Container>
         </Form.Group>
       </Form>
-    </>
+    </div>
   );
 }
 

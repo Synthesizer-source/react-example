@@ -4,6 +4,7 @@ import { Form, Container, Row, Col, Button } from "react-bootstrap";
 import SearchBar from "./components/Search/SearchBar";
 import Course from "./components/Course/Course";
 import courses from "./data/courses.json";
+import NavBar from "./components/NavBar/NavBar";
 
 function Courses() {
   const listCourses = courses.courses
@@ -14,7 +15,9 @@ function Courses() {
       </Col>
     ));
   return (
-    <div>
+    <div className="bg-dark">
+      <NavBar />
+      <div style={{ height: "50px" }} />
       <SearchBar />
       <Container className="w-75">
         <Row>{listCourses}</Row>

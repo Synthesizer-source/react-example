@@ -1,6 +1,6 @@
-* {
+/* * {
   outline: 1px solid red;
-}
+} */
 
 h1,
 p {
@@ -18,7 +18,7 @@ p {
   width: 120px;
 }
 
-.brand-text-color {
+.brand-color {
   color: #ef233c;
 }
 

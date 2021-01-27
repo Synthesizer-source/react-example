@@ -1,18 +1,18 @@
 import React, { Component } from "react";
 import NavBarItem from "./NavBarItem";
-
-const navItems = [
-  "Home",
-  "About",
-  "Instructors",
-  "Solutions",
-  "Collaborators",
-  "Contact",
-  "Courses"
-];
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { links } from "../../data/links.js";
 
 function NavBarItems() {
-  return navItems.map((item, index) => <NavBarItem key={index} item={item} />);
+  const navItems = links
+    .filter(item => item.isLink == true)
+    .map((linkItem, index) => (
+      <Link className={"nav-link text-light"} key={index} to={linkItem.link}>
+        {linkItem.title}
+      </Link>
+    ));
+
+  return <>{navItems}</>;
 }
 
 export default NavBarItems;

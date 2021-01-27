@@ -1,9 +1,14 @@
-import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { Form, Container, Row, Col, Button } from "react-bootstrap";
+import React from "react";
+import NavBar from "./components/NavBar/NavBar";
 
 function NotFound() {
-  return <h1>Böyle bişey YOK</h1>;
+  return (
+    <div className="bg-dark" style={{ minHeight: "100vh" }}>
+      <div>
+        <NavBar />
+      </div>
+    </div>
+  );
 }
 
 export default NotFound;

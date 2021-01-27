@@ -5,7 +5,7 @@ import NavBarItems from "./NavBarItems";
 function NavBar() {
   return (
     <Navbar bg="dark" fixed="top" expand="lg">
-      <Navbar.Brand className="offset-1" href="#home">
+      <Navbar.Brand className="offset-1" href="/">
         <span className="brand-color">DeveloperX</span>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />

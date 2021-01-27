@@ -13,7 +13,12 @@ import { links } from "./data/links.js";
 
 export default function App() {
   const routeMaps = links.map((item, index) => (
-    <Route path={item.link} exact={item.isExact} component={item.component} />
+    <Route
+      key={index}
+      path={item.link}
+      exact={item.isExact}
+      component={item.component}
+    />
   ));
   return (
     <Router>

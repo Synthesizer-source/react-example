@@ -1,16 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useLocation,
-  useHistory
-} from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 import courses from "./data/courses.json";
 import Course from "./components/Course/Course";
-import { Image, Container, Row, Col } from "react-bootstrap";
-
+import { Container, Row, Col } from "react-bootstrap";
+import NavBar from "./components/NavBar/NavBar";
+import SearchBar from "./components/Search/SearchBar";
 function Search() {
   const location = useLocation();
   const history = useHistory();
@@ -34,11 +28,14 @@ function Search() {
   }, [q]);
 
   return (
-    <>
-      <Container>
+    <div className="bg-dark" style={{ minHeight: "100vh" }}>
+      <NavBar />
+      <div style={{ height: "50px" }} />
+      <SearchBar />
+      <Container className="mt-5">
         <Row>{searchResult}</Row>
       </Container>
-    </>
+    </div>
   );
 }
 

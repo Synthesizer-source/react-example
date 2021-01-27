@@ -10,13 +10,13 @@ function Course(props) {
       <Card.Img
         src={item.cardImage}
         className="card-img-top rounded-0 img-fluid d-block m-auto"
-        style={{ height: "350px" }}
+        style={{ height: "180px" }}
         alt="..."
       />
-      <Card.Body>
+      <Card.Body style={{ backgroundColor: "#edf2f4" }}>
         <Card.Title>{item.title}</Card.Title>
-        <Card.Text>{item.detail}</Card.Text>
-        <Link className="btn btn-primary" to={`/courses/${item.id}`}>
+        <Card.Text>{item.instructor}</Card.Text>
+        <Link className="btn btn-primary w-100" to={`/courses/${item.id}`}>
           View
         </Link>
       </Card.Body>

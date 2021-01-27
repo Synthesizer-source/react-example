@@ -1,11 +1,17 @@
 {
   "courses":[
-    {"id" : 0, "title" : "C", "instructor":"Dennis Ritchie", "detail" : "Embedded Systems", "isActive" : true, "cardImage":"https://content.techgig.com/thumb/msid-75551562,width-860,resizemode-4/C-programming-language-rises-amid-COVID-19.jpg?72434",  "url": "https://ethw.org/w/images/4/4e/Dennis_Ritchie_1593.jpg"},
-    {"id" : 1, "title" : "C++",  "instructor":"Bjarne Stroustrup",  "detail" : "Image Processing", "isActive" : true, "cardImage":"https://engineering.fb.com/wp-content/uploads/2015/06/1522635669452_11.jpg","url":"//upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Bjarne-stroustrup_%28cropped%29.jpg/220px-Bjarne-stroustrup_%28cropped%29.jpg"},
-    {"id" : 2, "title" : "Java",  "instructor":"James Gosling", "detail" : "Object Oriented Programing", "isActive" : true, "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/James_Gosling_2008.jpg/1200px-James_Gosling_2008.jpg"},
-    {"id" : 3, "title" : "JavaScript","instructor":"Brendan Eich", "detail" : "Web Programming", "isActive" : true, "url":"https://steemitimages.com/DQmQYxQTeh4zH53rXK55rqiTQtouxgUVJkQrLpNrSqFXS7S/brendan-eich-2-sized.jpg"},
-    {"id" : 4, "title" : "Python","instructor":"Guido van Rossum", "detail" : "Python", "isActive" : true, "url":"https://alchetron.com/cdn/guido-van-rossum-c37d26d7-eae4-462f-838a-98a68fa1a20-resize-750.jpeg"},
-    {"id" : 5, "title" : "Git","instructor":"Linus Torvalds", "detail" : "Git Basics", "isActive" : true, "url":"https://upload.wikimedia.org/wikipedia/commons/6/69/Linus_Torvalds.jpeg"}
+    {"id" : 0, "title" : "C Programming", "instructor":"Dennis Ritchie", "detail" : ["Operating Systems","Embedded Systems","Graphical User Interface","Compiler Design"], "isActive" : true, "cardImage":"https://content.techgig.com/thumb/msid-75551562,width-860,resizemode-4/C-programming-language-rises-amid-COVID-19.jpg?72434",  "url": "https://ethw.org/w/images/4/4e/Dennis_Ritchie_1593.jpg"
+    },
+    {"id" : 1, "title" : "Advanced C++ Programming",  "instructor":"Bjarne Stroustrup",  "detail" : ["Image Processing","Cloud/Distributed System","Game Development","Graphical User Interface"], "isActive" : true, "cardImage":"https://engineering.fb.com/wp-content/uploads/2015/06/1522635669452_11.jpg","url":"//upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Bjarne-stroustrup_%28cropped%29.jpg/220px-Bjarne-stroustrup_%28cropped%29.jpg"
+    },
+    {"id" : 2, "title" : "Java Programming",  "instructor":"James Gosling", "detail" : ["Mobile Applications","Web-based Applications"], "isActive" : true, "cardImage":"https://5.imimg.com/data5/QQ/CT/AO/GLADMIN-25397883/selection-064-500x500.png", "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/James_Gosling_2008.jpg/1200px-James_Gosling_2008.jpg"
+    },
+    {"id" : 3, "title" : "JavaScript Basics","instructor":"Brendan Eich", "detail" : ["Web Development","Web Servers","Mobile Applications"], "isActive" : true, "cardImage":"https://i.morioh.com/2020/02/23/ce8781abd732.jpg", "url":"https://steemitimages.com/DQmQYxQTeh4zH53rXK55rqiTQtouxgUVJkQrLpNrSqFXS7S/brendan-eich-2-sized.jpg"
+    },
+    {"id" : 4, "title" : "Advanced Python Programming","instructor":"Guido van Rossum", "detail" : ["Scientific and Numeric Applications", "Artificial Intelligence and Machine Learning","Image Processing and Graphic Design Applications"], "isActive" : true, "cardImage":"https://5.imimg.com/data5/VI/HW/NO/SELLER-96857495/543420-05d5-3-500x500.jpg", "url":"https://alchetron.com/cdn/guido-van-rossum-c37d26d7-eae4-462f-838a-98a68fa1a20-resize-750.jpeg"
+    },
+    {"id" : 5, "title" : "Git Basics","instructor":"Linus Torvalds", "detail" : ["Version","Control","System"], "isActive" : true, "cardImage":"https://cdn.slidesharecdn.com/ss_thumbnails/git-basiccrashcourse-141116155622-conversion-gate02-thumbnail-4.jpg?cb=1416153848", "url":"https://upload.wikimedia.org/wikipedia/commons/6/69/Linus_Torvalds.jpeg"
+    }
   ]
 
   

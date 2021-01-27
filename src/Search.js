@@ -8,7 +8,7 @@ import {
   useHistory
 } from "react-router-dom";
 import courses from "./data/courses.json";
-import { Image, Container } from "react-bootstrap";
+import { Image, Container, Row, Col } from "react-bootstrap";
 
 function Search() {
   const location = useLocation();
@@ -30,7 +30,14 @@ function Search() {
       setSearchResult(productResults);
     }
   }, [q]);
-  return <ul>{searchResult}</ul>;
+
+  return (
+    <>
+      <Container>
+        <Row>{searchResult}</Row>
+      </Container>
+    </>
+  );
 }
 
 export default Search;

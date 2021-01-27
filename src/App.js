@@ -13,6 +13,7 @@ import Instructors from "./components/Instructors/Instructors";
 import Solutions from "./components/Solutions/Solutions";
 import Collaborators from "./components/Collaborators/Collaborators";
 import Footer from "./components/Footer";
+import ProductDetail from "./components/ProductDetail/ProductDetail";
 
 export default function App() {
   return (
@@ -30,6 +31,7 @@ export default function App() {
         <Route exact path="/courses/search">
           <Search />
         </Route>
+        <Route path="/courses/:id" component={ProductDetail} />
       </Switch>
     </Router>
   );
